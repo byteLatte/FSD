@@ -1,0 +1,81 @@
+[
+    {
+        "id": "940561",
+        "name": "Cjj",
+        "email": "123@university.com",
+        "password": "Cheng2002",
+        "subjects": [
+            {
+                "id": "244",
+                "mark": 30,
+                "grade": "F"
+            },
+            {
+                "id": "032",
+                "mark": 81,
+                "grade": "D"
+            },
+            {
+                "id": "207",
+                "mark": 38,
+                "grade": "F"
+            },
+            {
+                "id": "685",
+                "mark": 50,
+                "grade": "P"
+            }
+        ]
+    },
+    {
+        "id": "340561",
+        "name": "Wty",
+        "email": "321@university.com",
+        "password": "Cheng2002",
+        "subjects": [
+            {
+                "id": "244",
+                "mark": 80,
+                "grade": "D"
+            },
+            {
+                "id": "032",
+                "mark": 31,
+                "grade": "F"
+            },
+            {
+                "id": "207",
+                "mark": 38,
+                "grade": "F"
+            },
+            {
+                "id": "005",
+                "mark": 10,
+                "grade": "F"
+            }
+        ]
+    },
+    {
+        "id": "687878",
+        "name": "yifang yin",
+        "email": "yyf@university.com",
+        "password": "Yifang2222",
+        "subjects": [
+            {
+                "id": "008",
+                "mark": 77,
+                "grade": "D"
+            },
+            {
+                "id": "705",
+                "mark": 93,
+                "grade": "HD"
+            },
+            {
+                "id": "918",
+                "mark": 58,
+                "grade": "P"
+            }
+        ]
+    }
+]
