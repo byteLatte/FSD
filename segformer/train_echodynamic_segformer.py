@@ -129,7 +129,7 @@ work_dir = r'{work_dir}'
 """
 
 DATASET_PATTERN = re.compile(
-    r"(?P<stem>.+?)_(?P<phase>ED|ES)_(?P<split>train|val|test)(?P<mask>_mask)?\\.png",
+    r"(?P<stem>.+?)_(?P<phase>ED|ES)_(?P<split>train|val|test)(?P<mask>_mask)?\.png",
     re.IGNORECASE,
 )
 
@@ -280,10 +280,12 @@ def prepare_dataset(raw_dataset: Path, output_root: Path, limit_per_split: Optio
         (mask_root / split).mkdir(parents=True, exist_ok=True)
 
     counters = {'train': 0, 'val': 0, 'test': 0}
+    matched_files = 0
     for file in sorted(raw_dataset.glob('*.png')):
         match = DATASET_PATTERN.fullmatch(file.name)
         if not match:
             continue
+        matched_files += 1
         split = match.group('split').lower()
         if limit_per_split is not None and counters[split] >= limit_per_split:
             continue
@@ -304,6 +306,11 @@ def prepare_dataset(raw_dataset: Path, output_root: Path, limit_per_split: Optio
                 continue
             shutil.copy2(file, destination)
             counters[split] += 1
+
+    if matched_files == 0:
+        raise RuntimeError(
+            'No dataset files matched the expected naming pattern. Please inspect the raw dataset directory.'
+        )
 
     if counters['train'] == 0 or counters['val'] == 0:
         raise RuntimeError('Dataset preparation produced empty train/val splits. Check the source files.')
