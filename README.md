@@ -53,4 +53,11 @@ python main.py
 - 无需注册，直接使用管理员系统
 
 ## 数据存储
-所有数据存储在`students.data`文件中，使用JSON格式。 
+所有数据存储在`students.data`文件中，使用JSON格式。
+
+## SegFormer 训练脚本
+
+`segformer/` 目录包含一个自动化脚本，可以使用官方的
+[NVlabs/SegFormer](https://github.com/NVlabs/SegFormer) 仓库在 Kaggle
+Echodynamic 数据集上训练 SegFormer-B0。详细使用说明见
+`segformer/README.md`。
